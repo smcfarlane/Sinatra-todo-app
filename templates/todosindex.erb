@@ -1,0 +1,7 @@
+<% content_for :content do %>
+<h1>To-dos</h1>
+<% todos.each do |t| %>
+<p><% if t[4] == 0 %><a href="/todos/done/<%= t[0] %>">X</a><% else %>-<% end %> - <%= t[1] %> | due: <%= t[2].to_s %>/<%= t[3].to_s %> - <a href="/todos/edit/<%= t[0] %>">edit</a> - <a href="/todos/delete/<%= t[0] %>">delete</a></p>
+<% end %>
+<a href="/todos/new">Add New</a>
+<% end %>

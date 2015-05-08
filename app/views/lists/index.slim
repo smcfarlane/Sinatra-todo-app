@@ -1,0 +1,28 @@
+==slim :'layout/layout'
+  .container
+    .row
+      - lists.each_with_index do |l, i|
+        - if i % 3 == 0
+          .container
+            .row
+        .col-md-4
+          h3 
+            a href="/lists/show/#{l.id}" = l.name
+          table.table
+            thead
+              th Done
+              th Todo
+            tbody
+              - l.todos.each do |t|
+                tr
+                  td 
+                    - if t.done
+                      span.glyphicon.glyphicon-ok aria-hidden="true" style="color: green" 
+                    - else
+                      a href="/lists/mark-done/#{l.id}/#{t.id}"
+                        span.glyphicon.glyphicon-fire aria-hidden="true" style="color: red" 
+                  td = t.text
+          a.btn.btn-primary.btn-sm href="/lists/new/list-todo/#{l.id}" New Todo
+  .container style="margin-top: 20px"
+    .row
+      a.btn.btn-primary href="/lists/new" New List

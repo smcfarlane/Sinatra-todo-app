@@ -1,0 +1,14 @@
+==slim :'layout/layout'
+  .container
+    .row
+      form.form-inline method="POST"
+        fieldset
+          legend Create a New Todo
+          div.form-group
+            label.sr-only for='todo' Todo Text
+            input.form-control id="todo" name="todo" type="text" placeholder="Todo"
+          div.form-group
+            label.sr-only for="due" Due Date
+            input.form-control id="due" name="day" type="text" placeholder="Day"
+            input.form-control id="due" name='month' type="text" placeholder="Month"
+          button.btn.btn-primary type="submit" Create Todo

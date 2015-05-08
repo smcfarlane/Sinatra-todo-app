@@ -1,0 +1,26 @@
+==slim :'layout/layout'
+  .container
+    .row
+      h1 To-dos
+      table.table
+        thead
+          th Done
+          th Todo
+          th Edit
+          th Delete
+        tbody
+          - todos.each do |t|
+            tr
+              td
+                -if !t.done
+                  a href="/todos/done/#{t.id}" 
+                    span.glyphicon.glyphicon-fire aria-hidden="true" style="color: red" 
+                - else
+                  span.glyphicon.glyphicon-ok aria-hidden="true" style="color: green" 
+                td = "#{t.text}, due: #{t.due_date}"
+                td
+                  a href="/todos/edit/#{t.id}" edit
+                td
+                  a href="/todos/delete/#{t.id}" delete
+
+      a.btn.btn-primary href="/todos/new" Add New

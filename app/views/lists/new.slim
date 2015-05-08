@@ -1,0 +1,11 @@
+==slim :'layout/layout'
+  .container
+    .row
+      form.form-inline method="POST"
+        fieldset
+          legend New Todo List
+          .form-group
+            label.sr-only Todo List Name
+            input.form-control name="name" type="text"
+          .form-group
+            button.btn.btn-primary type="submit" Create New List

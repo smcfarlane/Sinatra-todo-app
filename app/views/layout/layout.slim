@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    link rel="stylesheet" href="/css/main.css"
+    script src="/js/main.js"
+  body
+    .container
+      .row
+        .col-md-4
+          h1 My App
+    .container style="margin-bottom: 20px"
+      .row
+        nav
+          ul.nav.nav-tabs
+            li role='presentation'
+              a href='/' Home
+            li role='presentation'
+              a href='/todos' Todos
+            li role='presentation'
+              a href='/lists' Lists
+    ==yield

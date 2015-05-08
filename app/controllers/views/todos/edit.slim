@@ -1,0 +1,11 @@
+==slim :'layout/layout'
+  form method="POST"
+    div
+      label for="todo" Edit the todo
+      input id="todo" name="todo" type="text" value="#{todo}" 
+      input name="id" type=hidden value="#{id}"
+    div
+      label for="due_day" Due Date
+      input id="due" name="day" type="text" placeholder="day" value="#{day}">
+      input id="due" name='month' type="text" placeholder="month" value="#{month}">
+    button type="submit" Edit Todo
